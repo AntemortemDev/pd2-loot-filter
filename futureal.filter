@@ -1,4 +1,4 @@
-//	Kryszard's PD2 Loot Filter for Season 13 updated for Season 14 by Antemortem: ver 14.1.1
+//	Kryszard's PD2 Loot Filter for Season 13: ver 13.3.2
 //	Tweaked for: Futureal (twitch.tv/futureal)
 //
 //	twitch.tv/kryszard
@@ -16,16 +16,16 @@ ItemDisplayFilterName[]: Strict Filter - w/o Potions
 ItemDisplayFilterName[]: Max-Strictness Filter
 
 //Show info about current Filter Level in description of Horadric Cube
-ItemDisplay[box]:%NAME%{%NAME%%NL%%GRAY%futureal.filter ver 13.3.2 %BLACK%| %GRAY% updated: 2026-05-14}%CONTINUE%
-ItemDisplay[box FILTLVL=0]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%0 - %TAN%Show All Items%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=1]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%1 - %TAN%Hide Just Trash Items%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=2]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%2 - %TAN%More Notify%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=3]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%3 - %TAN%More Notify %WHITE%- %RED%w/o Potions%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=4]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%4 - %TAN%Recommended%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=5]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%5 - %TAN%Recommended %WHITE%- %RED%w/o Potions%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=6]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%6 - %ORANGE%Strict Filter%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=7]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%7 - %ORANGE%Strict Filter %WHITE%- %RED%w/o Potions%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=8]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%8 - %RED%Max-Strictness Filter%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
+ItemDisplay[box]:%NAME%{%NAME%%NL%%GRAY%futureal.filter ver 14.1.1 %BLACK%| %GRAY% updated: 2026-11-03}%CONTINUE%
+ItemDisplay[box FILTLVL=0]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%0 - %TAN%Show All Items%NL%%WHITE% %NL%Kryszard's PD2 Loot-Filter level:%NL%%TAN%Note%WHITE%: Antemortem's edit of%NL%}
+ItemDisplay[box FILTLVL=1]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%1 - %TAN%Hide Just Trash Items%NL%%WHITE% %NL%Kryszard's PD2 Loot-Filter level:%NL%%TAN%Note%WHITE%: Antemortem's edit of%NL%}
+ItemDisplay[box FILTLVL=2]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%2 - %TAN%More Notify%NL%%WHITE% %NL%Kryszard's PD2 Loot-Filter level:%NL%%TAN%Note%WHITE%: Antemortem's edit of%NL%}
+ItemDisplay[box FILTLVL=3]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%3 - %TAN%More Notify %WHITE%- %RED%w/o Potions%NL%%WHITE% %NL%Kryszard's PD2 Loot-Filter level:%NL%%TAN%Note%WHITE%: Antemortem's edit of%NL%}
+ItemDisplay[box FILTLVL=4]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%4 - %TAN%Recommended%NL%%WHITE% %NL%Kryszard's PD2 Loot-Filter level:%NL%%TAN%Note%WHITE%: Antemortem's edit of%NL%}
+ItemDisplay[box FILTLVL=5]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%5 - %TAN%Recommended %WHITE%- %RED%w/o Potions%NL%%WHITE% %NL%Kryszard's PD2 Loot-Filter level:%NL%%TAN%Note%WHITE%: Antemortem's edit of%NL%}
+ItemDisplay[box FILTLVL=6]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%6 - %ORANGE%Strict Filter%NL%%WHITE% %NL%Kryszard's PD2 Loot-Filter level:%NL%%TAN%Note%WHITE%: Antemortem's edit of%NL%}
+ItemDisplay[box FILTLVL=7]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%7 - %ORANGE%Strict Filter %WHITE%- %RED%w/o Potions%NL%%WHITE% %NL%Kryszard's PD2 Loot-Filter level:%NL%%TAN%Note%WHITE%: Antemortem's edit of%NL%}
+ItemDisplay[box FILTLVL=8]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%8 - %RED%Max-Strictness Filter%NL%%WHITE% %NL%Kryszard's PD2 Loot-Filter level:%NL%%TAN%Note%WHITE%: Antemortem's edit of%NL%}
 
 //DEFINE ALIASES
 //Throwing Potions
