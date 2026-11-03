@@ -1,4 +1,4 @@
-//	Kryszard's PD2 Loot Filter for Season 13: ver 13.3.2
+//	Kryszard's PD2 Loot Filter for Season 13 updated for Season 14 by Antemortem: ver 14.1.1
 //	Tweaked for: Futureal (twitch.tv/futureal)
 //
 //	twitch.tv/kryszard
@@ -41,7 +41,7 @@ Alias[LOWVENGSFX]: (SUFFIX=695 OR SUFFIX=699 OR SUFFIX=703 OR SUFFIX=707 OR SUFF
 //Towns
 Alias[TOWN]: (MAPID=1 OR MAPID=40 OR MAPID=75 OR MAPID=103 OR MAPID=109)
 //Known Maps
-Alias[KNOWNMAPS]: (t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39 OR t3a OR t41 OR t42 OR t43 OR t44 OR t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t3b)
+Alias[KNOWNMAPS]: (t11 OR t12 OR t13 OR t14 OR t15 OR t16 OR t17 OR t18 OR t21 OR t22 OR t23 OR t24 OR t25 OR t26 OR t27 OR t28 OR t29 OR t2a OR t31 OR t32 OR t33 OR t34 OR t35 OR t36 OR t37 OR t38 OR t39 OR t3a OR t41 OR t42 OR t43 OR t44 OR t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58 OR t3b)
 
 //NEW PD2 UNIQUES
 //PD2 UBERS DCLONE/DUNGEON/RATHMA/LUCION BOSSES UNIQUES
@@ -56,11 +56,11 @@ Alias[PD2OKUNIETH1]: ((7cm OR 7fb OR 7st OR 9b8) UNI ETH !ID)
 //OK PD2 UNIQUES - Armors
 Alias[PD2OKUNI1]: ((drf OR utp OR ned OR ulg OR ung OR urg OR drc OR paf OR dr6 OR neg OR uhc OR aqv3 OR cqv3 OR uhl OR pab) UNI !ID)
 //OK PD2 UNIQUES - Weapons
-Alias[PD2OKUNI2]: ((ame OR 7di OR 7tw OR amc OR 7xf OR 6hb OR 6bs OR obd OR obe OR 7yw OR 7vo) UNI !ID)
+Alias[PD2OKUNI2]: ((ame OR 7tw OR amc OR 7xf OR 6hb OR 6bs OR obd OR obe OR 7yw OR 7vo) UNI !ID)
 //Lower Value PD2 UNIQUES when ETH
 Alias[PD2LOWUNIETH1]: ((am5) UNI ETH !ID)
 //Lower Value PD2 UNIQUES
-Alias[PD2LOWUNI1]: ((ba6 OR dr2 OR ne6 OR ulb OR 7cm OR 7fb OR aqv2 OR cqv2 OR 7st OR 9b8) UNI !ID)
+Alias[PD2LOWUNI1]: ((ba6 OR dr2 OR ne6 OR ulb OR 7cm OR 7fb OR aqv2 OR cqv2 OR 7st OR 9b8 OR 7di OR uuc OR urs) UNI !ID)
 //PD2 Uniques worth notifying
 Alias[PD2NOTIFYUNI1]: ((9ar OR ob6 OR am5 OR pa3 OR ba7 OR ob7) UNI !ID)
 
@@ -377,6 +377,9 @@ Alias[VSOCK201]: ((ne6 OR neb) UNI SOCK>0 CLSK2=1 FBR>0 STAT20>0)
 //QUEST ITEMS
 Alias[QUESTITEM]: (bks OR bkd OR tr1 OR ass OR box OR j34 OR g34 OR xyz OR bbb OR qbr OR qey OR qhr OR mss OR ice OR tr2 OR hdm OR msf OR vip OR hst OR g33 OR qf1 OR qf2 OR hfh OR tes OR ceh OR bet OR fed OR toa OR pk1 OR pk2 OR pk3 OR dhn OR bey OR mbr)
 
+
+
+
 //SOUNDS EFFECTS
 //Special Items Exclusives
 ItemDisplay[neg UNI !ID !TOWN]: %SOUNDID-4699%%NAME%{%NAME%}%CONTINUE% //fallen_warcry_1 - for Sacred Totem "Raaaakanishu!"
@@ -406,6 +409,11 @@ ItemDisplay[(ubtm OR dcma OR dcso OR dcbl OR dcho OR rtma OR rtmv OR rtmo OR cm2
 ItemDisplay[MAPTIER>0 !ID UNI !TOWN]: %SOUNDID-35%%NAME%{%NAME%}%CONTINUE% //hellforgesmash - for unique maps
 //Spare Interesting Sounds
 //ItemDisplay[]: %SOUNDID-705%%NAME%{%NAME%}%CONTINUE% //darkwanderer_death - spare sound for... ??? used later for unknown items
+
+
+//GRAIL
+ItemDisplay[(SET OR UNI) (JEWELRY OR QUIVER OR ARMOR OR WEAPON) !ID !ALLDISCOVERED !QUESTITEM]: %NAME% %TEAL%[GRAIL]%PX-76%%CONTINUE%
+
 
 //Gold
 ItemDisplay[GOLD<100 (CLVL>11 OR FILTLVL>5)]:
@@ -2279,6 +2287,7 @@ ItemDisplay[key QTY=2 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Chains of Honor%W
 ItemDisplay[key QTY=3 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Chaos%WHITE%: %ORANGE%Fal %LIGHT_GRAY%+ %ORANGE%Ohm %LIGHT_GRAY%+ %ORANGE%Um%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=3 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Crescent Moon%WHITE%: %ORANGE%Shael %LIGHT_GRAY%+ %ORANGE%Um %LIGHT_GRAY%+ %ORANGE%Tir%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=3 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Death%WHITE%: %ORANGE%Hel %LIGHT_GRAY%+ %ORANGE%El %LIGHT_GRAY%+ %ORANGE%Vex %LIGHT_GRAY%+ %ORANGE%Ort %LIGHT_GRAY%+ %ORANGE%Gul%NL%%NAME%}%CONTINUE%
+ItemDisplay[key QTY=3 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Deception%WHITE%: %ORANGE%Fal %LIGHT_GRAY%+ %ORANGE%Amn %LIGHT_GRAY%+ %ORANGE%Hel%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=3 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Delirium%WHITE%: %ORANGE%Lem %LIGHT_GRAY%+ %ORANGE%Ist %LIGHT_GRAY%+ %ORANGE%Io%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=3 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Destruction%WHITE%: %ORANGE%Vex %LIGHT_GRAY%+ %ORANGE%Lo %LIGHT_GRAY%+ %ORANGE%Ber %LIGHT_GRAY%+ %ORANGE%Jah %LIGHT_GRAY%+ %ORANGE%Ko%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=3 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Dominion%WHITE%: %ORANGE%Cham %LIGHT_GRAY%+ %ORANGE%Ohm%NL%%NAME%}%CONTINUE%
@@ -2299,6 +2308,7 @@ ItemDisplay[key QTY=5 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Faith%WHITE%: %OR
 
 ItemDisplay[key QTY=6 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Famine%WHITE%: %ORANGE%Fal %LIGHT_GRAY%+ %ORANGE%Ohm %LIGHT_GRAY%+ %ORANGE%Ort %LIGHT_GRAY%+ %ORANGE%Jah%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=6 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Ferocity%WHITE%: %ORANGE%Zod %LIGHT_GRAY%+ %ORANGE%Cham %LIGHT_GRAY%+ %ORANGE%Shael%NL%%NAME%}%CONTINUE%
+ItemDisplay[key QTY=6 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Finesse%WHITE%: %ORANGE%Nef %LIGHT_GRAY%+ %ORANGE%Ral %LIGHT_GRAY%+ %ORANGE%Dol%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=6 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Flickering Flame%WHITE%: %ORANGE%Nef %LIGHT_GRAY%+ %ORANGE%Pul %LIGHT_GRAY%+ %ORANGE%Vex%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=6 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Fortitude%WHITE%: %ORANGE%El %LIGHT_GRAY%+ %ORANGE%Sol %LIGHT_GRAY%+ %ORANGE%Dol %LIGHT_GRAY%+ %ORANGE%Lo%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=6 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Fury%WHITE%: %ORANGE%Jah %LIGHT_GRAY%+ %ORANGE%Gul %LIGHT_GRAY%+ %ORANGE%Eth%NL%%NAME%}%CONTINUE%
@@ -2316,6 +2326,7 @@ ItemDisplay[key QTY=8 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Ice%WHITE%: %ORAN
 ItemDisplay[key QTY=8 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Infinity%WHITE%: %ORANGE%Ber %LIGHT_GRAY%+ %ORANGE%Mal %LIGHT_GRAY%+ %ORANGE%Ber %LIGHT_GRAY%+ %ORANGE%Ist%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=8 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Innocence%WHITE%: %ORANGE%Gul %LIGHT_GRAY%+ %ORANGE%Lem %LIGHT_GRAY%+ %ORANGE%Zod %LIGHT_GRAY%+ %ORANGE%Hel%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=8 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Insight%WHITE%: %ORANGE%Ral %LIGHT_GRAY%+ %ORANGE%Tir %LIGHT_GRAY%+ %ORANGE%Tal %LIGHT_GRAY%+ %ORANGE%Sol%NL%%NAME%}%CONTINUE%
+ItemDisplay[key QTY=8 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Jealousy%WHITE%: %ORANGE%Lo %LIGHT_GRAY%+ %ORANGE%Gul %LIGHT_GRAY%+ %ORANGE%Thul%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=8 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%King's Grace%WHITE%: %ORANGE%Amn %LIGHT_GRAY%+ %ORANGE%Ral %LIGHT_GRAY%+ %ORANGE%Thul%NL%%NAME%}%CONTINUE%
 
 ItemDisplay[key QTY=9 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Kingslayer%WHITE%: %ORANGE%Mal %LIGHT_GRAY%+ %ORANGE%Um %LIGHT_GRAY%+ %ORANGE%Gul %LIGHT_GRAY%+ %ORANGE%Fal%NL%%NAME%}%CONTINUE%
@@ -2326,6 +2337,7 @@ ItemDisplay[key QTY=9 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Lionheart%WHITE%:
 ItemDisplay[key QTY=9 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Lore%WHITE%: %ORANGE%Ort %LIGHT_GRAY%+ %ORANGE%Sol%NL%%NAME%}%CONTINUE%
 
 ItemDisplay[key QTY=10 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Loyalty%WHITE%: %ORANGE%Pul %LIGHT_GRAY%+ %ORANGE%Tir %LIGHT_GRAY%+ %ORANGE%Dol%NL%%NAME%}%CONTINUE%
+ItemDisplay[key QTY=10 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Madness%WHITE%: %ORANGE%Sur %LIGHT_GRAY%+ %ORANGE%Mal %LIGHT_GRAY%+ %ORANGE%Vex %LIGHT_GRAY%+ %ORANGE%Shael%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=10 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Malice%WHITE%: %ORANGE%Ith %LIGHT_GRAY%+ %ORANGE%El %LIGHT_GRAY%+ %ORANGE%Eth%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=10 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Melody%WHITE%: %ORANGE%Shael %LIGHT_GRAY%+ %ORANGE%Ko %LIGHT_GRAY%+ %ORANGE%Nef%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=10 (TOWN OR MAPID>132) !SHOP]: %NAME%{%GRAY%Memory%WHITE%: %ORANGE%Lum %LIGHT_GRAY%+ %ORANGE%Io %LIGHT_GRAY%+ %ORANGE%Sol %LIGHT_GRAY%+ %ORANGE%Eth%NL%%NAME%}%CONTINUE%
@@ -2393,8 +2405,8 @@ ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Belt: [10-20
 ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Gloves: [5-10]% Crush. Blow, [2-4]% LL, [10-20] Life%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Boots: [5-10]% Op. Wounds, [2-4]% LL, [10-20] Life%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Helm: [10-15]% Crush. Blow, [2-4]% LL, [10-20] Life%NL%%NAME%}%CONTINUE%
-ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Chest: [4-6] LPK, [5-8]% Max Life, [30-50]% Defense%NL%%NAME%}%CONTINUE%
-ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Shield: [10-20]% Block, [3-6]% LL, [5-8]% Max Life%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Chest: [4-6] LPK, [5-7]% Max Life, [30-50]% Defense%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Shield: [10-20]% Block, [3-6]% LL, [5-7]% Max Life%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Weapon: [50-80]% ED, [3-6]% LL, [10-20] Life%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=18 (TOWN OR MAPID>132) !SHOP) OR crfb]: %NAME%{Quiver: [10-20]% Crush. Blow, [3-6]% LL, [10-20] Life%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=19 (TOWN OR MAPID>132) !SHOP]: %NAME%{%WHITE%Caster %ORANGE%[%PURPLE%O%ORANGE%]%WHITE%:}%CONTINUE%
@@ -2420,12 +2432,12 @@ ItemDisplay[(key QTY=20 (TOWN OR MAPID>132) !SHOP) OR crfs]: %NAME%{Shield: [20-
 ItemDisplay[(key QTY=20 (TOWN OR MAPID>132) !SHOP) OR crfs]: %NAME%{Weapon: [50-80]% ED, Knockback, [2-5] M&PDR%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=20 (TOWN OR MAPID>132) !SHOP) OR crfs]: %NAME%{Quiver: 10% FRW, [4-7] M&PDR%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=21 (TOWN OR MAPID>132) !SHOP]: %NAME%{%WHITE%Hitpower %ORANGE%[%BLUE%O%ORANGE%]%WHITE%:}%CONTINUE%
-ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Amulet: [150-250] AR, [10-20]% FHR%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Amulet: [100-150] AR, [10-15]% chance to Pierce%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Ring: [5-10] Dex, [2-4] Max Dmg%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Belt: [5-10]% FBR, [10-20]% FHR%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Gloves: Knockback, -[10-20]% Target Defense%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Boots: [60-120] Def vs Melee, [10-20]% FHR%NL%%NAME%}%CONTINUE%
-ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Helm: [100-200] AR, [10-20]% FHR%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Helm: [100-150] AR, [10-15]% chance to Pierce%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Chest: [75-100]% Defense, [30-40]% FHR%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Shield: [10-20]% Block, [20-30]% FBR%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=21 (TOWN OR MAPID>132) !SHOP) OR crfh]: %NAME%{Weapon: [50-80]% ED, -[10-20]% Target Defense%NL%%NAME%}%CONTINUE%
@@ -2442,15 +2454,15 @@ ItemDisplay[(key QTY=22 (TOWN OR MAPID>132) !SHOP) OR crfv]: %NAME%{Shield: [10-
 ItemDisplay[(key QTY=22 (TOWN OR MAPID>132) !SHOP) OR crfv]: %NAME%{Weapon: [100-140]% Demon/Undead, [3-6]% ML, [10-15] R.Life%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=22 (TOWN OR MAPID>132) !SHOP) OR crfv]: %NAME%{Quiver: [30-50]% PLR, [3-6]% ML, [15-25] R.Life%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=23 (TOWN OR MAPID>132) !SHOP]: %NAME%{%WHITE%Bountiful %ORANGE%[%YELLOW%O%ORANGE%]%WHITE%:}%CONTINUE%
-ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Amulet: [10-20] Vit, [20-30]% MF, [1-3] L.Rad%NL%%NAME%}%CONTINUE%
-ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Ring: [5-10] Vit, [10-20]% MF, [1-3] L.Rad%NL%%NAME%}%CONTINUE%
-ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Belt: [25-50]% Def, [20-30]% MF, [1-3] L.Rad%NL%%NAME%}%CONTINUE%
-ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Gloves: [25-50]% Def, [15-25]% MF, [1-3] L.Rad%NL%%NAME%}%CONTINUE%
-ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Boots: [25-50]% Def, [15-25]% MF, [1-3] L.Rad%NL%%NAME%}%CONTINUE%
-ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Helm: [25-50]% Def, [20-30]% MF, [1-3] L.Rad%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Amulet: [10-20] Vit, [20-30]% MF, [30-50]% EG%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Ring: [5-10] Vit, [10-20]% MF, [30-50]% EG%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Belt: [25-50]% Def, [15-25]% MF, [25-40]% EG%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Gloves: [25-50]% Def, [10-20]% MF, [20-30]% EG%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Boots: [25-50]% Def, [10-20]% MF, [20-30]% EG%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Helm: [25-50]% Def, [15-25]% MF, [25-40]% EG%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Chest: [30-50]% Def, [20-30]% MF, [30-50] EG%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Shield: [10-20]% Block, [20-30]% MF, [30-50] EG%NL%%NAME%}%CONTINUE%
-ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Weapon: 1 to All Skills, [20-30]% MF, [1-3] L.Rad%NL%%NAME%}%CONTINUE%
+ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Weapon: 1 to All Skills, [15-25]% MF, [25-40]% EG%NL%%NAME%}%CONTINUE%
 ItemDisplay[(key QTY=23 (TOWN OR MAPID>132) !SHOP) OR crfu]: %NAME%{Quiver: [5-10] Vit, [15-25]% MF, [20-30]% EG%NL%%NAME%}%CONTINUE%
 ItemDisplay[key QTY=24 (TOWN OR MAPID>132) !SHOP]: %NAME%{%WHITE%Brilliant %ORANGE%[%WHITE%O%ORANGE%]%WHITE%:}%CONTINUE%
 ItemDisplay[(key QTY=24 (TOWN OR MAPID>132) !SHOP) OR crfp]: %NAME%{Amulet: [5-15]% All Res, [100-150] Def vs Missle, [4-8] All Atrb%NL%%NAME%}%CONTINUE%
@@ -3130,6 +3142,8 @@ ItemDisplay[cm1 MAG (((PRES>9 AND LIFE>0) OR (PRES>4 AND LIFE>9) OR (PRES>0 AND 
 //Veng TAG
 ItemDisplay[cm1 MAG (HIGHVENGPFX OR (HIGHVENGSFX AND MIDVENGPFX) OR (MIDVENGPFX AND (MIDVENGSFX OR LOWVENGSFX)) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND GFIND>0) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND MFIND>0) OR ((MIDVENGPFX OR MIDVENGSFX) AND MFIND>4) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND DEX>0) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND STR>0) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND LIFE>0) OR ((MIDVENGPFX OR MIDVENGSFX) AND LIFE>9) OR ((LOWVENGPFX OR LOWVENGSFX) AND LIFE>14) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND MAXDMG>0) OR ((HIGHVENGPFX OR HIGHVENGSFX OR MIDVENGPFX OR MIDVENGSFX) AND FHR>0) OR ((HIGHVENGPFX OR HIGHVENGSFX OR MIDVENGPFX OR MIDVENGSFX) AND FRW>0) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND FRES>0) OR ((MIDVENGPFX OR MIDVENGSFX) AND FRES>4) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND LRES>0) OR ((MIDVENGPFX OR MIDVENGSFX) AND LRES>4) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND CRES>0) OR ((MIDVENGPFX OR MIDVENGSFX) AND CRES>4) OR ((HIGHVENGPFX OR HIGHVENGSFX) AND PRES>0) OR ((MIDVENGPFX OR MIDVENGSFX) AND PRES>4))]: %CORAL%V%TEAL%e%SAGE%n%YELLOW%g %NAME%{%NAME%}%CONTINUE%
 
+
+
 //NEW PD2 UNIQUES
 //PD2 UBERS DCLONE/DUNGEON/RATHMA/LUCION BOSSES UNIQUES
 ItemDisplay[PD2UBERUNI1 OR PD2UBERUNI2]: %BORDER-68%%NAME%
@@ -3253,6 +3267,7 @@ ItemDisplay[CIRC (MAG OR RARE) !ID]: %NAME%
 
 //Rare Gloves, Belts and Boots
 ItemDisplay[(GLOVES OR BOOTS OR BELT) RARE !ID]: %NAME%
+ItemDisplay[(GLOVES OR BOOTS) RARE !ID]: %NAME%%DOT-6A%
 
 //Rare Chest Armor, Helmets and Shields
 ItemDisplay[(CHEST OR SHIELD OR HELM) RARE !ID]: %NAME%
@@ -3284,10 +3299,10 @@ ItemDisplay[NMAG SOCK=0 MAXSOCKETS>0 !GROUND]: %NAME%{%NAME%%CL%%WHITE%Maximum S
 //Notes about possible RuneWords
 //Chest, Head, Shield, Quiver
 ItemDisplay[CHEST SOCK=2 NMAG !RW !GROUND]: %NAME%{%GRAY%Prudence, Smoke, Stealth%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
-ItemDisplay[CHEST SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Principle, Rain, Treachery, Wealth%CL%Gloom, Hustle, Lionheart, Myth, Peace,%CL%Dragon, Duress, Enigma, Enlightenment,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Bone, }%CONTINUE%
+ItemDisplay[CHEST SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Finesse%CL%Principle, Rain, Treachery, Wealth%CL%Gloom, Hustle, Lionheart, Myth, Peace,%CL%Dragon, Duress, Enigma, Enlightenment,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Bone, }%CONTINUE%
 ItemDisplay[CHEST SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Fortitude, Innocence, Stone%CL%Bramble, Chains of Honor, %CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 ItemDisplay[(HELM OR CIRC) SOCK=2 NMAG !RW !GROUND]: %NAME%{%GRAY%Lore, Nadir%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
-ItemDisplay[(HELM OR CIRC) SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Flickering Flame, Radiance, Wisdom%CL%Dream, Delirium, Ferocity,%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
+ItemDisplay[(HELM OR CIRC) SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Flickering Flame, Radiance, Wisdom, Deception%CL%Dream, Delirium, Ferocity,%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 ItemDisplay[SHIELD SOCK=2 NMAG !RW !GROUND]: %NAME%{%GRAY%Rhyme, Splendor%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 ItemDisplay[SHIELD SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Pledge, Dragon, Dream, Sanctuary%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Ancient's}%CONTINUE%
 ItemDisplay[SHIELD SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Epiphany, Exile, Phoenix, Spirit%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
@@ -3318,16 +3333,17 @@ ItemDisplay[SCEPTER SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Lawbringer, Malice, P
 ItemDisplay[(clb OR spc OR mac OR mst OR fla OR 9cl OR 9sp OR 9ma OR 9mt OR 9fl OR 7cl OR 7sp OR 7ma OR 7mt OR 7fl) SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Fury, Malice, Plague, Venom%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Black,}%CONTINUE%
 ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Malice, Plague, Venom%CL%Black, Fury, Lawbringer,%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 ItemDisplay[THROWING SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Lawbringer, Malice, Plague, Venom%CL%Crescent Moon, Fury, King's Grace,%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
+ItemDisplay[(am5 OR ama OR amf) SOCK=3 NMAG !RW !GROUND]: %NAME%{%GRAY%Lawbringer, Malice, Plague, Venom, Jealousy%CL%Crescent Moon, Fury, King's Grace,%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 //Weapons 4soc
-ItemDisplay[WEAPON SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Hand of Justice, Passion, Phoenix%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
-ItemDisplay[(BOW OR XBOW) SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Phoenix, Voice of Reason, Wrath%CL%Hand of Justice, Harmony, Passion,%CL%Brand, Faith, Fortitude, Ice,%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
-ItemDisplay[(fla OR 9fl OR 7fl) SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Oath, Passion, Phoenix, Voice of Reason%CL%Hand of Justice, Heart of the Oak,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
-ItemDisplay[SWORD SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Phoenix, Rift, Spirit, Voice of Reason%CL%Justice, Kingslayer, Oath, Passion,%CL%Famine, Fortitude, Hand of%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
-ItemDisplay[(POLEARM OR SPEAR OR JAV) !THROWING SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Passion, Phoenix, Pride, Rampage, Rift%CL%Hand of Justice, Infinity, Insight,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
-ItemDisplay[SCEPTER SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Passion, Phoenix, Rift, Voice of Reason%CL%Holy Thunder, Hand of Justice,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
-ItemDisplay[AXE SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Oath, Passion, Phoenix%CL%Fortitude, Hand of Justice, Kingslayer,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Famine,}%CONTINUE%
-ItemDisplay[STAFF SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Phoenix, Pride, Rampage, Spirit%CL%Infinity, Insight, Memory, Passion,%CL%Hand of Justice, Heart of the Oak,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
-ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Justice, Passion, Phoenix%CL%Famine, Fortitude, Hand of%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
+ItemDisplay[WEAPON SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Madness%CL%Hand of Justice, Passion, Phoenix%CL%Madness%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
+ItemDisplay[(BOW OR XBOW) SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Madness%CL%Phoenix, Voice of Reason, Wrath%CL%Hand of Justice, Harmony, Passion,%CL%Brand, Faith, Fortitude, Ice,%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
+ItemDisplay[(fla OR 9fl OR 7fl) SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Oath, Passion, Phoenix, Voice of Reason%CL%Hand of Justice, Heart of the Oak, Madness%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
+ItemDisplay[SWORD SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Madness%CL%Phoenix, Rift, Spirit, Voice of Reason%CL%Justice, Kingslayer, Oath, Passion,%CL%Famine, Fortitude, Hand of%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
+ItemDisplay[(POLEARM OR SPEAR OR JAV) !THROWING SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Madness%CL%Passion, Phoenix, Pride, Rampage, Rift%CL%Hand of Justice, Infinity, Insight,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
+ItemDisplay[SCEPTER SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Passion, Phoenix, Rift, Voice of Reason%CL%Holy Thunder, Hand of Justice, Madness%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
+ItemDisplay[AXE SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Oath, Passion, Phoenix, Madness%CL%Fortitude, Hand of Justice, Kingslayer,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Famine,}%CONTINUE%
+ItemDisplay[STAFF SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Madness%CL%Phoenix, Pride, Rampage, Spirit%CL%Infinity, Insight, Memory, Passion,%CL%Hand of Justice, Heart of the Oak,%CL%%TAN%Note%WHITE%: Possible RuneWords: %GRAY%Fortitude,}%CONTINUE%
+ItemDisplay[(whm OR mau OR gma OR 9wh OR 9m9 OR 9gm OR 7wh OR 7m7 OR 7gm) SOCK=4 NMAG !RW !GROUND]: %NAME%{%GRAY%Justice, Passion, Phoenix, Madness%CL%Famine, Fortitude, Hand of%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 //Weapons 5soc
 ItemDisplay[WEAPON !(BOW OR XBOW) SOCK=5 NMAG !RW !GROUND]: %NAME%{%GRAY%Call to Arms%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
 ItemDisplay[(BOW OR XBOW) SOCK=5 NMAG !RW !GROUND]: %NAME%{%GRAY%Mist, Zenith%CL%%TAN%Note%WHITE%: Possible RuneWords:}%CONTINUE%
@@ -3403,7 +3419,7 @@ ItemDisplay[(dgr OR dir OR tkf OR tax OR jav OR wnd OR 9wn OR ywn OR buc OR xuc)
 ItemDisplay[(dgr OR dir OR tkf OR tax OR jav OR wnd OR 9wn OR ywn OR buc OR xuc) (RARE OR CRAFT OR UNI OR SET) ID SOCK=0 STAT360=0 !GROUND]: %NAME%{%NAME%, %RED%C%WHITE%:%ORANGE%2}%CONTINUE%
 ItemDisplay[(dgr OR dir OR tkf OR tax OR jav OR wnd OR 9wn OR ywn OR buc OR xuc) (RARE OR CRAFT OR UNI OR SET) ID SOCK=0 !GROUND]: %NAME%{%NAME%%TAN%]}%CONTINUE%
 //ITEMS - upgrade improves C to 3
-ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR scp OR bsh OR qui OR lea OR hla OR stu OR scl OR chn OR spl OR plt OR fld OR xui OR xea OR xla OR xtu) (RARE OR CRAFT OR UNI OR SET) ID SOCK=0 STAT360=0 !GROUND]: %NAME%{%NAME%%CL%%WHITE%After Upgrade: %TAN%[%WHITE%L:1, %TAN%P%WHITE%:2%WHITE%, %RED%C%WHITE%:%ORANGE%3%TAN%]}%CONTINUE%
+ItemDisplay[(hax OR clb OR spc OR mac OR ssd OR scm OR sbr OR flc OR scp OR bsh OR qui OR lea OR hla OR stu OR scl OR chn) (RARE OR CRAFT OR UNI OR SET) ID SOCK=0 STAT360=0 !GROUND]: %NAME%{%NAME%%CL%%WHITE%After Upgrade: %TAN%[%WHITE%L:1, %TAN%P%WHITE%:2%WHITE%, %RED%C%WHITE%:%ORANGE%3%TAN%]}%CONTINUE%
 //ITEMS - upgrade improves C to 3 only when ILVL>25
 ItemDisplay[(ktr OR wrb OR axf OR ces OR ne1 OR ne2 OR ne3 OR ne4 OR ne5) ILVL>25 (RARE OR CRAFT OR UNI OR SET) ID SOCK=0 STAT360=0 !GROUND]: %NAME%{%NAME%%CL%%WHITE%After Upgrade: %TAN%[%WHITE%L:1, %TAN%P%WHITE%:2%WHITE%, %RED%C%WHITE%:%ORANGE%3%TAN%]}%CONTINUE%
 //ITEMS - upgrade improves C to 3 only when ILVL>40
@@ -4846,6 +4862,11 @@ ItemDisplay[jewf ID]: %BLUE%%NAME%{%GRAY%(Stackable Jewel)%NL%%TAN%Note%WHITE%: 
 //Standard of Heroes
 ItemDisplay[std]: %PX-9D%%NAME%{%NAME%}//{%WHITE%+10% Experience%NL%+20% Magic&Gold Find%NL%+20% Monster Density%NL%%TAN%Note: %WHITE%Cube it with Map to gain:}
 
+// Alternate skins: 5th Anniversary and Alternative Edition uniques
+ItemDisplay[UNI ID STAT270>0 (6ws OR uap OR xhn OR dr6 OR uit)]: %NAME% %GRAY%[%ORANGE%Anniversary%GRAY%]{%NAME%}%CONTINUE%
+ItemDisplay[UNI ID STAT270>0 !(6ws OR uap OR xhn OR dr6 OR uit)]: %NAME% %GRAY%[%ORANGE%Alt Edition%GRAY%]{%NAME%}%CONTINUE%
+
+
 //Show me every identified item
 ItemDisplay[(ARMOR OR WEAPON OR QUIVER) (MAG OR RARE OR SET OR UNI OR CRAFT) ID]: %NAME%{%NAME%}
 
@@ -4939,6 +4960,9 @@ ItemDisplay[t16]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:75 %BLACK%| %Y
 //Halls of Torture
 ItemDisplay[t17]: %NAME%{%WHITE%Boss Damage: %GRAY%Missing Data %BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
 ItemDisplay[t17]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:%CORAL%120 %BLACK%| %YELLOW%L%WHITE%:%CORAL%120 %BLACK%| %GREEN%P%WHITE%:85 %BLACK%| %ORANGE%M%WHITE%:35 %BLACK%| %GOLD%P%WHITE%:50%CL%%NAME%}%CONTINUE%
+//The Poisoned Well
+ItemDisplay[t18]: %NAME%{%WHITE%Boss Damage: %GRAY%??? %BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
+ItemDisplay[t18]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:75 %BLACK%| %YELLOW%L%WHITE%:75 %BLACK%| %GREEN%P%WHITE%:75 %BLACK%| %ORANGE%M%WHITE%:55 %BLACK%| %GOLD%P%WHITE%:60%CL%%NAME%}%CONTINUE%
 //Phlegethon Map
 ItemDisplay[t21]: %NAME%{%WHITE%Boss Damage: %RED%Fire %BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
 ItemDisplay[t21]: %NAME%{%RED%F%WHITE%:%CORAL%120 %BLACK%| %BLUE%C%WHITE%:75 %BLACK%| %YELLOW%L%WHITE%:80 %BLACK%| %GREEN%P%WHITE%:%CORAL%120 %BLACK%| %ORANGE%M%WHITE%:50 %BLACK%| %GOLD%P%WHITE%:50%CL%%NAME%}%CONTINUE%
@@ -4963,6 +4987,12 @@ ItemDisplay[t27]: %NAME%{%RED%F%WHITE%:%CORAL%120 %BLACK%| %BLUE%C%WHITE%:75 %BL
 //Skovos Stronghold
 ItemDisplay[t28]: %NAME%{%WHITE%Boss Damage: %GOLD%Phys%WHITE%/%ORANGE%Magic %BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
 ItemDisplay[t28]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:%CORAL%120 %BLACK%| %YELLOW%L%WHITE%:75 %BLACK%| %GREEN%P%WHITE%:%CORAL%120 %BLACK%| %ORANGE%M%WHITE%:40 %BLACK%| %GOLD%P%WHITE%:55%CL%%NAME%}%CONTINUE%
+//The Fortress of Aranoch
+ItemDisplay[t29]: %NAME%{%WHITE%Boss Damage: %GRAY%???%BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
+ItemDisplay[t29]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:75 %BLACK%| %YELLOW%L%WHITE%:75 %BLACK%| %GREEN%P%WHITE%:75 %BLACK%| %ORANGE%M%WHITE%:45 %BLACK%| %GOLD%P%WHITE%:50%CL%%NAME%}%CONTINUE%
+//The Descent from Mount Arreat 
+ItemDisplay[t2a]: %NAME%{%WHITE%Boss Damage: %GRAY%???%BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
+ItemDisplay[t2a]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:75 %BLACK%| %YELLOW%L%WHITE%:75 %BLACK%| %GREEN%P%WHITE%:75 %BLACK%| %ORANGE%M%WHITE%:55 %BLACK%| %GOLD%P%WHITE%:60%CL%%NAME%}%CONTINUE%
 //River of Blood Map
 ItemDisplay[t31]: %NAME%{%WHITE%Boss Damage: %GREEN%Poison%WHITE%/%BLUE%Cold %BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
 ItemDisplay[t31]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:75 %BLACK%| %YELLOW%L%WHITE%:%CORAL%120 %BLACK%| %GREEN%P%WHITE%:%CORAL%120 %BLACK%| %ORANGE%M%WHITE%:%CORAL%105 %BLACK%| %GOLD%P%WHITE%:66%CL%%NAME%}%CONTINUE%
@@ -4995,7 +5025,7 @@ ItemDisplay[t3a]: %NAME%{%WHITE%Boss Damage: %RED%Fire%WHITE%/%YELLOW%Light %BLA
 ItemDisplay[t3a]: %NAME%{%RED%F%WHITE%:%CORAL%120 %BLACK%| %BLUE%C%WHITE%:%CORAL%130 %BLACK%| %YELLOW%L%WHITE%:75 %BLACK%| %GREEN%P%WHITE%:75 %BLACK%| %ORANGE%M%WHITE%:50 %BLACK%| %GOLD%P%WHITE%:50%CL%%NAME%}%CONTINUE%
 //Kyovoshad
 ItemDisplay[t3b]: %NAME%{%WHITE%Boss Damage: %GRAY%Missing Data %BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
-ItemDisplay[t3b]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:75 %BLACK%| %YELLOW%L%WHITE%:75 %BLACK%| %GREEN%P%WHITE%:75 %BLACK%| %ORANGE%M%WHITE%:50 %BLACK%| %GOLD%P%WHITE%:66%CL%%NAME%}%CONTINUE%
+ItemDisplay[t3b]: %NAME%{%RED%F%WHITE%:120 %BLACK%| %BLUE%C%WHITE%:75 %BLACK%| %YELLOW%L%WHITE%:120 %BLACK%| %GREEN%P%WHITE%:75 %BLACK%| %ORANGE%M%WHITE%:105 %BLACK%| %GOLD%P%WHITE%:66%CL%%NAME%}%CONTINUE%
 //Cathedral of Light Map
 ItemDisplay[t41]: %NAME%{%WHITE%Boss Damage: %GRAY%Missing Data %BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
 ItemDisplay[t41]: %NAME%{%RED%F%WHITE%:%CORAL%145 %BLACK%| %BLUE%C%WHITE%:%CORAL%145 %BLACK%| %YELLOW%L%WHITE%:%CORAL%145 %BLACK%| %GREEN%P%WHITE%:%CORAL%145 %BLACK%| %ORANGE%M%WHITE%:%CORAL%145 %BLACK%| %GOLD%P%WHITE%:%CORAL%120%CL%%NAME%}%CONTINUE%
@@ -5025,7 +5055,7 @@ ItemDisplay[t55]: %NAME%{%WHITE%Boss Damage: %GRAY%Missing Data %BLACK%| %WHITE%
 ItemDisplay[t55]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:50 %BLACK%| %YELLOW%L%WHITE%:75 %BLACK%| %GREEN%P%WHITE%:30 %BLACK%| %ORANGE%M%WHITE%:50 %BLACK%| %GOLD%P%WHITE%:50%CL%%NAME%}%CONTINUE%
 //City of Ureh
 ItemDisplay[t56]: %NAME%{%WHITE%Boss Damage: %GRAY%Missing Data %BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
-ItemDisplay[t56]: %NAME%{%RED%F%WHITE%:85 %BLACK%| %BLUE%C%WHITE%:80 %BLACK%| %YELLOW%L%WHITE%:%CORAL%100%GRAY%? %BLACK%| %GREEN%P%WHITE%:75 %BLACK%| %ORANGE%M%WHITE%:50 %BLACK%| %GOLD%P%WHITE%:65%CL%%NAME%}%CONTINUE%
+ItemDisplay[t56]: %NAME%{%RED%F%WHITE%:85 %BLACK%| %BLUE%C%WHITE%:80 %BLACK%| %YELLOW%L%WHITE%:%CORAL%100%GRAY% %BLACK%| %GREEN%P%WHITE%:75 %BLACK%| %ORANGE%M%WHITE%:50 %BLACK%| %GOLD%P%WHITE%:65%CL%%NAME%}%CONTINUE%
 //Djinn's Domain
 ItemDisplay[t57]: %NAME%{%WHITE%Boss Damage: %GRAY%Missing Data %BLACK%| %WHITE%Monsters Highest Res:%CL%%NAME%}%CONTINUE%
 ItemDisplay[t57]: %NAME%{%RED%F%WHITE%:75 %BLACK%| %BLUE%C%WHITE%:75 %BLACK%| %YELLOW%L%WHITE%:75 %BLACK%| %GREEN%P%WHITE%:75 %BLACK%| %ORANGE%M%WHITE%:50 %BLACK%| %GOLD%P%WHITE%:55%CL%%NAME%}%CONTINUE%
@@ -5146,7 +5176,7 @@ ItemDisplay[(r03 OR r03s)]: %NAME%{Pattern, Prudence, Silence, Steel, Strength,%
 ItemDisplay[(r03 OR r03s)]: %NAME%{%GRAY%Wealth%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r04 OR r04s)]: %NAME%{Black, Flickering Flame, Melody, Myth, Nadir,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r04 OR r04s)]: %NAME%{%GRAY%Obsession, Radiance, Smoke%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r04 OR r04s)]: %NAME%{%GRAY%Obsession, Radiance, Smoke, Finesse%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r05 OR r05s)]: %NAME%{Bramble, Breath of the Dying, Fury, Grief,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r05 OR r05s)]: %NAME%{Holy Thunder, Malice, Memory, Obedience, Purity,%NL%%NAME%}%CONTINUE%
@@ -5162,7 +5192,7 @@ ItemDisplay[(r07 OR r07s)]: %NAME%{%GRAY%Venom%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r08 OR r08s)]: %NAME%{Ancient's Foresigh, Ancient's Pledge, Bramble,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r08 OR r08s)]: %NAME%{Call to Arms, Enlightenment, Grief, Holy Thunder,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r08 OR r08s)]: %NAME%{Insight, King's Grace, Leaf, Principle, Rapture,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r08 OR r08s)]: %NAME%{%GRAY%Shattered Wall, Zenith%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r08 OR r08s)]: %NAME%{%GRAY%Shattered Wall, Zenith, Finesse%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r09 OR r09s)]: %NAME%{Ancient's Pledge, Ancient's Scripture, Death,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r09 OR r09s)]: %NAME%{Famine, Holy Thunder, Lore, Passion, Pattern,%NL%%NAME%}%CONTINUE%
@@ -5171,11 +5201,11 @@ ItemDisplay[(r09 OR r09s)]: %NAME%{%GRAY%Rain, Spirit, Zenith, Zephyr%NL%%NAME%}
 ItemDisplay[(r10 OR r10s)]: %NAME%{Ancient's Foresigh, Black, Duress,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r10 OR r10s)]: %NAME%{Heart of the Oak, King's Grace, Mist, Neophyte,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r10 OR r10s)]: %NAME%{Obedience, Peace, Purity, Spirit, Treachery,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r10 OR r10s)]: %NAME%{%GRAY%Zenith%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r10 OR r10s)]: %NAME%{%GRAY%Zenith, Jealousy%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r11 OR r11s)]: %NAME%{Call to Arms, Edge, Eternity, Hand of Justice,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r11 OR r11s)]: %NAME%{Honor, Ice, King's Grace, Lawbringer, Myth,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r11 OR r11s)]: %NAME%{%GRAY%Peace, Purity, Spirit, Strength%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r11 OR r11s)]: %NAME%{%GRAY%Peace, Purity, Spirit, Strength, Deception%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r12 OR r12s)]: %NAME%{Bone, Dragon, Echo, Enlightenment, Eternity,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r12 OR r12s)]: %NAME%{Fortitude, Harmony, Honor, Insight, Lore, Memory,%NL%%NAME%}%CONTINUE%
@@ -5183,14 +5213,14 @@ ItemDisplay[(r12 OR r12s)]: %NAME%{%GRAY%Radiance%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r13 OR r13s)]: %NAME%{Crescent Moon, Duress, Ferocity, Hustle, Ice,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r13 OR r13s)]: %NAME%{Melody, Mist, Oath, Peace, Rampage, Rhyme, Stone,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r13 OR r13s)]: %NAME%{%GRAY%Treachery%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r13 OR r13s)]: %NAME%{%GRAY%Treachery, Madness%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r14 OR r14s)]: %NAME%{Asylum, Chains of Honor, Echo, Exile, Fortitude,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r14 OR r14s)]: %NAME%{%GRAY%Loyalty, Passion, Silence, Venom, White%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r14 OR r14s)]: %NAME%{%GRAY%Loyalty, Passion, Silence, Venom, White, Finesse%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r15 OR r15s)]: %NAME%{Asylum, Breath of the Dying, Death, Doom,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r15 OR r15s)]: %NAME%{Innocence, Lionheart, Myth, Obedience, Rift,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r15 OR r15s)]: %NAME%{%GRAY%Silence, Unbending Will%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r15 OR r15s)]: %NAME%{%GRAY%Silence, Unbending Will, Deception%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r16 OR r16s)]: %NAME%{Black, Delirium, Dream, Memory, Obsession, Pride,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r16 OR r16s)]: %NAME%{%GRAY%Unbending Will, White%NL%%NAME%}%CONTINUE%
@@ -5203,7 +5233,7 @@ ItemDisplay[(r18 OR r18s)]: %NAME%{Lawbringer, Melody, Obedience, Rapture, Rift,
 ItemDisplay[(r18 OR r18s)]: %NAME%{%GRAY%Sanctuary, Voice of Reason, Wealth%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r19 OR r19s)]: %NAME%{Chaos, Famine, Gloom, Kingslayer, Lionheart,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r19 OR r19s)]: %NAME%{%GRAY%Obedience, Plague, Unbending Will%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r19 OR r19s)]: %NAME%{%GRAY%Obedience, Plague, Unbending Will, Deception%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r20 OR r20s)]: %NAME%{Delirium, Faith, Innocence, Lawbringer,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r20 OR r20s)]: %NAME%{Obsession, Passion, Rift, Treachery,%NL%%NAME%}%CONTINUE%
@@ -5219,28 +5249,28 @@ ItemDisplay[(r22 OR r22s)]: %NAME%{%GRAY%Plague, Stone%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r23 OR r23s)]: %NAME%{Beast, Brand, Call to Arms, Grief, Infinity,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r23 OR r23s)]: %NAME%{Kingslayer, Last Wish, Oath, Prudence, Rain,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r23 OR r23s)]: %NAME%{%GRAY%Rapture, Sanctuary, Venom, Wrath%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r23 OR r23s)]: %NAME%{%GRAY%Rapture, Sanctuary, Venom, Wrath, Madness%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r24 OR r24s)]: %NAME%{Call to Arms, Chains of Honor, Delirium,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r24 OR r24s)]: %NAME%{Epiphany, Eternity, Exile, Infinity, Obsession,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r24 OR r24s)]: %NAME%{%GRAY%Silence%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r25 OR r25s)]: %NAME%{Asylum, Brand, Death, Fury, Innocence,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r25 OR r25s)]: %NAME%{%GRAY%Kingslayer, Mist, Principle, Rift%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r25 OR r25s)]: %NAME%{%GRAY%Kingslayer, Mist, Principle, Rift, Jealousy%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r26 OR r26s)]: %NAME%{Breath of the Dying, Death, Destruction, Exile,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r26 OR r26s)]: %NAME%{Flickering Flame, Heart of the Oak, Phoenix,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r26 OR r26s)]: %NAME%{%GRAY%Rapture, Silence%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r26 OR r26s)]: %NAME%{%GRAY%Rapture, Silence, Madness%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r27 OR r27s)]: %NAME%{Bramble, Call to Arms, Chaos, Dominion, Doom,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r27 OR r27s)]: %NAME%{%GRAY%Exile, Faith, Famine%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r28 OR r28s)]: %NAME%{Brand, Destruction, Doom, Dragon, Epiphany,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r28 OR r28s)]: %NAME%{Fortitude, Grief, Hand of Justice, Ice, Phoenix,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r28 OR r28s)]: %NAME%{%GRAY%Pride, Rapture%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r28 OR r28s)]: %NAME%{%GRAY%Pride, Rapture, Jealousy%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r29 OR r29s)]: %NAME%{Bramble, Dragon, Eternity, Hand of Justice,%NL%%NAME%}%CONTINUE%
-ItemDisplay[(r29 OR r29s)]: %NAME%{%GRAY%Last Wish, Pride, Wind%NL%%NAME%}%CONTINUE%
+ItemDisplay[(r29 OR r29s)]: %NAME%{%GRAY%Last Wish, Pride, Wind, Madness%NL%%NAME%}%CONTINUE%
 //
 ItemDisplay[(r30 OR r30s)]: %NAME%{Beast, Chains of Honor, Destruction, Enigma,%NL%%NAME%}%CONTINUE%
 ItemDisplay[(r30 OR r30s)]: %NAME%{%GRAY%Eternity, Infinity, Last Wish, Wrath%NL%%NAME%}%CONTINUE%
@@ -5359,3 +5389,4 @@ ItemDisplay[(ARMOR OR WEAPON OR QUIVER) !THROWPOTS ((CLVL>30 FILTLVL>0) OR FILTL
 //BELOW: Minimap Pin + Notify for TIER1, Just Pin for TIER2, Hide for Tier3+
 //ItemDisplay[(ARMOR OR WEAPON OR QUIVER) FILTLVL<4]: %MAP-0A%%PX-62%%TIER-1%%NAME%
 //ItemDisplay[(ARMOR OR WEAPON OR QUIVER) FILTLVL>2]: %NAME%
+
